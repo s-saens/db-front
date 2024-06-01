@@ -18,16 +18,7 @@ const User = () => {
     <div className="recommendation-form">
       <h2>차량 추천 받기</h2>
       <div className="input-group">
-        <label htmlFor="km">주행거리 (km)</label>
-        <input
-          type="text"
-          id="km"
-          value={km}
-          onChange={(e) => setKm(e.target.value)}
-        />
-      </div>
-      <div className="input-group">
-        <label htmlFor="cost">차량 구입 비용</label>
+        <label htmlFor="cost">일시불 예산</label>
         <input
           type="text"
           id="cost"
@@ -36,12 +27,21 @@ const User = () => {
         />
       </div>
       <div className="input-group">
-        <label htmlFor="monthlyExpense">월별 지출</label>
+        <label htmlFor="monthlyExpense">월급</label>
         <input
           type="text"
           id="monthlyExpense"
           value={monthlyExpense}
           onChange={(e) => setMonthlyExpense(e.target.value)}
+        />
+      </div>
+      <div className="input-group">
+        <label htmlFor="km">월 주행거리 (km)</label>
+        <input
+          type="text"
+          id="km"
+          value={km}
+          onChange={(e) => setKm(e.target.value)}
         />
       </div>
       <div className="input-group">

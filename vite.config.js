@@ -5,6 +5,6 @@ export default defineConfig({
   plugins: [react()],
   base: '/db-front/',
   server: {
-    port: 3000,
+    port: 3030,
   },
 })
