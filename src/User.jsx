@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import './User.css';
 
-const User = () => {
+const User = ({ onSubmit }) => {
+
   // 각 입력 필드의 상태를 관리하는 useState 훅 사용
   const [km, setKm] = useState('');
   const [cost, setCost] = useState('');
   const [monthlyExpense, setMonthlyExpense] = useState('');
-  const [age, setAge] = useState('');
 
   // 사용자 정보를 서버로 보내는 함수
   const handleSubmit = () => {
-    // HTTP 요청 보내는 코드 작성
-    console.log('서버로 사용자 정보를 보냅니다.');
+    const data = { km: km, price: cost, month_budget: monthlyExpense };
+    onSubmit(data);
   };
 
   return (
@@ -27,7 +27,7 @@ const User = () => {
         />
       </div>
       <div className="input-group">
-        <label htmlFor="monthlyExpense">월급</label>
+        <label htmlFor="monthlyExpense">월 유지비 예산</label>
         <input
           type="text"
           id="monthlyExpense"
@@ -42,15 +42,6 @@ const User = () => {
           id="km"
           value={km}
           onChange={(e) => setKm(e.target.value)}
-        />
-      </div>
-      <div className="input-group">
-        <label htmlFor="age">나이</label>
-        <input
-          type="text"
-          id="age"
-          value={age}
-          onChange={(e) => setAge(e.target.value)}
         />
       </div>
       <button onClick={handleSubmit}>추천받기</button>

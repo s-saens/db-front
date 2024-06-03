@@ -1,17 +1,20 @@
 // RecommendedItem.js
 import React from 'react';
 
-const RecommendedItem = ({ name, price, company, type, fuel, cc, efficiency }) => {
+const RecommendedItem = (car) => {
   return (
-    <div style={{ border: '1px solid #ccc', padding: '30px 50px', marginBottom: '10px', borderRadius: '30px', margin: '20px' }}>
-      <h3>{name}</h3>
+    <div style={{ border: '1px solid #ccc', width: '200px', marginBottom: '10px', borderRadius:'10px', margin: '20px', textAlign: 'center' }}>
+      <h3>{car.name}</h3>
+      <p>{car.company}</p>
       <hr/>
-      <p>{price} 만원</p>
-      <p>{company}</p>
-      <p>{type}</p>
-      <p>{fuel}</p>
-      <p>{cc} cc</p>
-      <p>{efficiency} km/l</p>
+      <p>{car.type}</p>
+      <p>{car.fuel}</p>
+      <p>{car.cc} cc</p>
+      <p>{car.efficiency} km/l</p>
+      <hr/>
+      <p>가격: {car.price}원</p>
+      <p>월 유지비: {car.expense.toFixed(0)}원</p>
+      <p>부적합성: {car.score.toFixed(1)}</p>
     </div>
   );
 };
